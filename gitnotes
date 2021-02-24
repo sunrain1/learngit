@@ -1,4 +1,51 @@
-选择一个合适的地方，创建一个空目录：
+1.选择一个合适的地方，创建一个空目录：
 $ mkdir learngit
 $ cd learngit
 $ pwd
+2.通过git init命令把这个目录变成Git可以管理的仓库：
+$ git init
+3.把文件添加到版本库:
+在“learngit"目录下创建一个新的<file>.txt文件
+(1)用命令git add告诉Git，把文件添加到仓库：
+$ git add <file>
+(2)用命令git commit告诉Git，把文件提交到仓库：
+$ git commit -m "message"
+[master (root-commit) ******] 引号内message
+ * file changed, * insertions(+)
+ create mode ***** <file>
+ 总结：初始化一个Git仓库，使用git init命令。
+添加文件到Git仓库，分两步：
+使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+使用命令git commit -m <message>，完成。
+4.git status命令可以让我们时刻掌握仓库当前的状态
+再次修改<file>.txt文件内容：
+现在，运行git status命令看看结果：
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+上面的命令输出显示，<file>.txt被修改过了，但还没有准备提交。
+
+
+
+
+
+
+
+
+
+
+
+
+要明白这3个概念，工作区（working tree），暂存区（index /stage），本地仓库（repository）
+
+git跟不同的参数，比较不同的区间的版本。
+
+git diff：是查看working tree与index的差别的。
+git diff --cached：是查看index与repository的差别的。
+git diff HEAD：是查看working tree和repository的差别的。其中：HEAD代表的是最近的一次commit的信息。
