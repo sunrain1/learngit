@@ -30,8 +30,8 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 上面的命令输出显示，<file>.txt被修改过了，但还没有准备提交。
-
-
+5.用git diff查看上一次修改:
+$ git diff <file>.txt 
 
 
 
@@ -49,3 +49,4 @@ git跟不同的参数，比较不同的区间的版本。
 git diff：是查看working tree与index的差别的。
 git diff --cached：是查看index与repository的差别的。
 git diff HEAD：是查看working tree和repository的差别的。其中：HEAD代表的是最近的一次commit的信息。
+综上所述：git diff 后面跟文件名称是是查看工作区（working tree）与暂存区（index）的差别的。
